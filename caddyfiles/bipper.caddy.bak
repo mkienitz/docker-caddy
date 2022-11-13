@@ -1,0 +1,3 @@
+bipper.maxkienitz.com {
+    reverse_proxy bipper:8000        
+}

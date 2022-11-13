@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+        caddy:
+                container_name: "caddy"
+                image: caddy:2-alpine
+                restart: unless-stopped
+                ports:
+                        - "80:80"
+                        - "443:443"
+                volumes:
+                        - ./Caddyfile:/etc/caddy/Caddyfile
+                        - /home/max/static_files:/static
+                        - ./caddyfiles:/etc/caddy/caddyfiles
+                        - ./config:/config/caddy
+                        - caddy_data:/data
+                networks:
+                        - web
+
+volumes:
+        caddy_data:
+                external: true
+
+networks:
+        web:
+                external: true

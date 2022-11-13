@@ -1,0 +1,5 @@
+
+files.maxkienitz.com {
+	root * /static
+	file_server browse
+}

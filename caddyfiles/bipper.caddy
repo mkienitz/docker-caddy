@@ -1,0 +1,4 @@
+bipper.maxkienitz.com {
+	import origin_pull
+	reverse_proxy bipper:8000
+}

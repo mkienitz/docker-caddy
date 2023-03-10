@@ -1,1 +1,15 @@
+{
+	auto_https off
+	admin off
+}
+
+(origin_pull) {
+	tls /etc/ssl/certs/cf_cert.pem /etc/ssl/certs/cf_key.pem {
+		client_auth {
+			mode require_and_verify
+			trusted_ca_cert_file /etc/ssl/certs/cf_origin_pull_ca.pem
+		}
+	}
+}
+
 import /etc/caddy/caddyfiles/*.caddy

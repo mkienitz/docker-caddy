@@ -1,0 +1,4 @@
+paypal.maxkienitz.com {
+	import origin_pull
+	redir https://www.paypal.com/paypalme/maximiliankienitz
+}

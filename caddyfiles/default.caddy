@@ -1,0 +1,7 @@
+maxkienitz.com *.maxkienitz.com {
+    import origin_pull
+    header {
+        Content-Type text/html
+    }
+    respond "<img src=\"https://http.cat/404.jpg\">" 404
+}

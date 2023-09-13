@@ -1,5 +1,5 @@
 files.maxkienitz.com {
 	import origin_pull
-	root * /static/files
+	root * /static/
 	file_server browse
 }

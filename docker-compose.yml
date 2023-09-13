@@ -1,26 +1,23 @@
 version: "3.8"
-
 services:
-        caddy:
-                container_name: "caddy"
-                image: caddy:2-alpine
-                restart: unless-stopped
-                ports:
-                        - "443:443"
-                volumes:
-                        - ./Caddyfile:/etc/caddy/Caddyfile:ro
-                        - /home/max/static:/static:ro
-                        - ./caddyfiles:/etc/caddy/caddyfiles:ro
-                        - ./certs:/etc/ssl/certs:ro
-                        - caddy_data:/data
-                networks:
-                        - web
-
+  caddy:
+    container_name: "caddy"
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - ./certs:/etc/ssl/certs:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddyfiles:/etc/caddy/caddyfiles:ro
+      - ./static:/static:ro
+    networks:
+      - web
 volumes:
-        caddy_data:
-                external: true
-
+  caddy_data:
+    external: true
 networks:
-        web:
-                external: true
-        default:
+  web:
+    external: true
+  default:
